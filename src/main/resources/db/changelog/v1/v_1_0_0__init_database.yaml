@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - logicalFilePath: "v_1_0_0__init_database.yaml"
+  - changeSet:
+      id: 1.0.0
+      author: Igor Ogadyarov
+      comment: "Create tables"
+      labels: "v_1.0.0"
+      context: "all"
+      changes:
+       - sql:
+          comment: создание таблицы, если нет других таблиц owners
+          sql: >
+            create schema if not exists owners;
+      rollback:
+        - sql:
+            comment: удаление таблицы, если существуют таблицы owners
+            sql: >
+              drop schema if exists owners;

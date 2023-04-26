@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: "changelog/v1/v_1_0_0__init_database.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changelog/v1/v_1_0_1_create_owners.yaml"
+      relativeToChangelogFile: true
